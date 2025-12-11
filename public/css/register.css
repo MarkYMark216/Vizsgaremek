@@ -1,0 +1,199 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-img {
+    background-image: url('/images/111.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.6);
+}
+
+.bg-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    z-index: 1;
+}
+
+.regist{
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 66px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: whitesmoke;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.27));
+    position: relative;
+    margin-bottom: 40px;
+    margin-top: 17%;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.field input,
+.field select {
+    font-size: 14pt;
+    border: none;
+    border-bottom: 1.5px solid rgb(255, 255, 255);
+    background: none;
+    padding: 17px;
+    padding-left: 20px; 
+    font-weight: 700;
+    width: 100%;
+    max-width: 380px;
+    color: #ffffff;
+    display: block;
+    margin: 0 auto; 
+    box-sizing: border-box; 
+}
+
+
+.field input::placeholder {
+    font-size: 17px;
+    color: whitesmoke;
+}
+
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover, 
+.field input:-webkit-autofill:focus, 
+.field input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #23232329;
+    font-size: 14pt;
+}
+
+.field input:active,
+.field input:focus,
+.field input:hover,
+.field select:active,
+.field select:focus,
+.field select:hover {
+    outline: none;
+    border-bottom: 2.5px solid whitesmoke;
+}
+
+.field select {
+    background: transparent !important;
+    color: #fff;
+    border: none;
+    border-bottom: 1.5px solid #fff;
+    appearance: none;
+}
+
+
+.field select option {
+    background-color: rgb(46, 42, 42);
+    color: white;
+}
+
+.field select option:hover {
+    background-color: #222;
+}
+
+
+.gomb {
+    display: block;           
+    margin: 30px auto 0 auto; 
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #222121;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative; 
+    overflow: hidden;
+    transition: all 0.6s ease;
+}
+
+.gomb::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    transform: skewX(-45deg);
+    transition: all 1s ease;
+}
+
+.gomb:hover::before {
+    left: 100%;
+}
+
+.gomb:hover {
+    background-color: #2a2a2a;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+.gomb:active {
+    transform: scale(0.95);
+    background-color: #000000;
+}
+
+/* Mobilra reszponzív */
+@media (max-width: 600px) {
+
+    /* Fejléc méret csökkentése mobilon */
+    header.regist {
+        text-align: center;
+        font-size: 49px;
+        line-height: 1.2;
+    }
+
+    /* Gomb teljes szélesség, reszponzív */
+    .gomb {
+        width: 60%;
+        max-width: none;
+        padding: 14px 20px;
+    }
+
+    /* Mezők (input, select) reszponzív padding-gel */
+    .field input,
+    .field select {
+        width: 100%;
+        font-size: 13pt;
+        padding: 12px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Lenőló lista opciói mobilon is olvashatóak */
+    .field select option {
+        font-size: 13pt;
+    }
+}
+
+
