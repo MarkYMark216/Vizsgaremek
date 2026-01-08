@@ -11,7 +11,7 @@ body {
 }
 
 .bg-img {
-    background-image: url('/images/111.jpg');
+    background-image: url('/images/login.jpg');
     background-size: cover;
     background-position: center;
     position: fixed;
@@ -20,7 +20,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    filter: brightness(0.6);
+    filter: brightness(0.9);
 }
 
 .bg-img::after {
@@ -30,7 +30,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.65);
+    background: rgba(33, 33, 33, 0.238); 
     z-index: 1;
 }
 
@@ -41,11 +41,13 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: whitesmoke;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.27));
+    text-align: center;
     position: relative;
+    color: whitesmoke; 
     margin-bottom: 40px;
     margin-top: 17%;
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.27));
+    animation: float 3s infinite ease-in-out, fadeIn 1.5s ease-in-out, glow 1.5s infinite alternate;
 }
 
 .content {
@@ -196,4 +198,13 @@ body {
     }
 }
 
+.error-text {
+    color: #dc2626;
+    margin-top: 0.25rem;
+    padding-left: 20px;   
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
 

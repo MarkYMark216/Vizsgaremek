@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -21,6 +22,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'gender',
+        'roomid',
+        'group_leaderid',
+        'dorm_supervisorid',
+        'account_status',
     ];
 
     /**
@@ -45,4 +51,20 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected static function booted()
+    {
+        static::created(function ($user) {
+            DB::table('user_role')->insert([
+                'userid' => $user->id,
+                'roleid' => 5, 
+            ]);
+        });
+    }
+
+    public function room()
+    {
+        return $this->belongsTo(Room::class, 'roomid', 'roomid');
+    }
+
 }

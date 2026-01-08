@@ -1,0 +1,256 @@
+/* HEADER RÉSZ KEZDETE */
+
+*
+{
+    color:rgb(0, 0, 0);
+}
+
+html, body {
+    font-family: 'Noto Serif', serif !important;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+/* Header stílusai */
+header {
+    margin-top: 5%;
+    min-height: 14%;
+    padding: 0px 0;
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+
+/* Hamburger menü */
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Hamburger menü csíkok */
+.menu-toggle div {
+    width: 30px; 
+    height: 3px; 
+    background-color: #000; 
+    margin: 5px 0; 
+    border-radius: 0; 
+    transition: background-color 0.3s ease; 
+    position: fixed;
+}
+
+
+/* Menü listájának stílusai */
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Menüelemek */
+.menu li {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+.menu form input[type="submit"] {
+    all: unset; 
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+}
+
+/* Hover effektus */
+.menu a:hover, 
+.menu form input[type="submit"]:hover {
+    transform: scale(1.1); 
+}
+
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    max-width: 220px;
+    height: auto;
+    margin-top: 5%;
+}
+
+
+.nav-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 6%;
+}
+
+.nav-left {
+    position: absolute;
+    left: 50%;
+     transform: translateX(-50%);
+}
+
+.nav-right {
+    position: absolute;
+    right: 0;
+    text-align: right;
+}
+
+
+
+
+/* Tel nézet (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        min-height: 15%;
+    }
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Menü alapértelmezett állapotban el van rejtve */
+    .menu {
+        display: none;
+        position: absolute;
+        top: 120px;
+        left: 0;
+        width: 100%; 
+        max-width: 1000px; 
+        background-color: #fff;
+        z-index: 1000;
+        border-top: 1px solid #000;
+        transition: top 0.3s ease;
+    }
+
+    .menu.show {
+        display: block;
+        top: 122px;
+    }
+
+    /* Menüelemek tel nézetben */
+    .menu.show li {
+        text-align: left;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    /* Menü linkek tel nézetben */
+    .menu.show a, 
+    .menu.show input[type="submit"] {
+        text-align: left;
+        padding-left: 10px;
+    }
+
+    /* Menüelemek közötti vonal */
+    .menu.show li {
+        position: relative;
+    }
+
+    .menu.show li::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #000;
+    }
+
+    .menu.show li:last-child::after {
+        content: none;
+    }
+
+    /* Menü háttér árnyékolása */
+    .menu.show::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.07);
+        z-index: -1;
+    }
+
+    /* Menü listája tel nézetben */
+    .menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* Logó tel nézetben */
+    .logo {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .logo img {
+        max-width: 150px;
+    }
+
+    .role-selector, .input-field {
+        display: block;
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .role-selector::after, .input-field::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #000;
+    }
+
+    .menu.show li:last-child::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #000;
+    }
+}
+
+/* HEADER RÉSZ VÉGE */
+
+
+
+
+
+
+
+
+
+
+
